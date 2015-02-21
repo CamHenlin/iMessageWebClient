@@ -1,24 +1,25 @@
-# iMessage web client
+# iMessage Web Client
 
 ![iMessage web client screenshot](https://github.com/CamHenlin/imessagewebclient/raw/master/screenshot.png "screenshot of the iMessage web client in action")
 
-## What it is
-iMessage web is a web interface for iMessages, enabled by running a small node app and collection of AppleScripts on a server signed into your iMessages account with Messages.app. Supersedes [iMessageService](https://github.com/CamHenlin/iMessageService)
+## What is this?
+iMessage Web Client is a web interface for iMessages, enabled by running a small nodejs app and collection of AppleScripts on a server signed into your iMessages account with Messages.app. Supersedes [iMessageService](https://github.com/CamHenlin/iMessageService)
 
 ## Use cases
 - Try out a non-iPhone and keep iMessages turned on for some reason
 - Be signed in to 2 or more iMessages accounts at once on one iOS/Mac devices
-- send iMessages from your Windows computer at work from your Mac at home more easily than [this other project](https://github.com/CamHenlin/imessageclient/)
+- Send iMessages from your Windows computer at work from your Mac at home more easily than [this other project](https://github.com/CamHenlin/imessageclient/)
+- You tell me
 
 ## Security concerns
-Of course, access to your iMessages means that security is a concern, especially for something web-based. I decided that the best solution to address this was firstly to have the user create a "key" during the postinstall step that they must use to login to the web app on their devices. Secondly, designed the server to generate a self-signed SSL certificate when the app is first run. Of course, the certificate will be invalid and generate warnings for most clients, but at least it will enable encryption. More advanced users can drop legitimate SSL certificates in place if desired.
+Of course, access to your iMessages means that security is a concern, especially for something web-based. I decided that the best solution to address this was firstly to have the user create a "key" during the installation step that they must use to login to the web app on their devices this key can be reset by running "npm run postinstall". Secondly, the server also generates a self-signed SSL certificate when the app is first installed. Of course, the certificate will be invalid and generate warnings for most clients, but at least it will enable encryption. More advanced users can drop legitimate SSL certificates in place if desired.
 
 ## requirements:
 - server running OS X 10.7 or better
 - nodejs
 - Apple iMessages account signed in to Messages.app
 
-## How to run on your Mac:
+## How to get the server running on your Mac:
 ```bash
 git clone https://github.com/CamHenlin/imessagewebclient.git
 
@@ -32,11 +33,10 @@ node app
 ```
 `note: if you prefer to start the app without sudo, start it instead with the command: PORT=YOUR_PORT npm start, and adjust your web browser accordingly`
 
-## How to use:
-- navigate your favorite web browser to https://localhost/
+## How to access on some other device:
+- navigate your favorite web browser to https://localhost/ (or whatever forwarding service you have pointed to your computer, or its IP address!)
 - enter the key you set during the installation
-
-I also recommend setting up some kind of dns service, such as No IP, that you can use to access your computer remotely.
+- use the app as if it were the Messages app on an iPhone
 
 ## This is clunky!
 Yeah I will probably improve it over the next few days.
