@@ -3,7 +3,7 @@
 ![iMessage web client screenshot](https://github.com/CamHenlin/imessagewebclient/raw/master/screenshot.png "screenshot of the iMessage web client in action")
 
 ## What is this?
-iMessage Web Client is a web interface for iMessages, enabled by running a small nodejs app and collection of AppleScripts on a server signed into your iMessages account with Messages.app. Supersedes [iMessageService](https://github.com/CamHenlin/iMessageService)
+iMessage Web Client is a web interface for iMessages, enabled by running a small nodejs app (which itself is based on [imessageclient](https://github.com/CamHenlin/imessageclient)) and collection of AppleScripts on a server signed into your iMessages account with Messages.app. Supersedes [iMessageService](https://github.com/CamHenlin/iMessageService)
 
 ## Use cases
 - Try out a non-iPhone and keep iMessages turned on for some reason
