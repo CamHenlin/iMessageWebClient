@@ -38,6 +38,8 @@ node app
 - enter the key you set during the installation
 - use the app as if it were the Messages app on an iPhone
 
+Note if you are using this on a mobile device, it is mobile web app capable.
+
 ## This is clunky!
 Yeah I will probably improve it over the next few days.
 
