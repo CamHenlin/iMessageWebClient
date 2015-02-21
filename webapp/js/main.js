@@ -39,6 +39,7 @@ function loadChats() {
 			$("#chat-"+index).click(function(e) {
 				var chatId = $(e.currentTarget).attr('data-chat-id');
 				$('#conversationcontainer').attr('data-id', chatId);
+				$('#newmessagetext').keypress(enterKeyListener);
 				loadMessages();
 			});
 

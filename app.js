@@ -85,6 +85,7 @@ if (process.argv[2] === "setkey") {
 		// console.log("we have a file to monitor!");
 	} else {
 		// console.log("no dice!");
+		return;
 	}
 
 	// discover if we are running and old version of OS X or not
@@ -103,7 +104,6 @@ if (process.argv[2] === "setkey") {
 			// return because we already have false set and error means text boxes and lists only
 			return;
 		}
-
 		if (parseInt(out) > 1) {
 			FULL_KEYBOARD_ACCESS = true;
 		}
@@ -276,6 +276,7 @@ if (process.argv[2] === "setkey") {
 		}
 
 		SELECTED_CHATTER = req.params.chatid;
+		// console.log('getting ' + SELECTED_CHATTER);
 
 		var SQL = "";
 		if (SELECTED_CHATTER.indexOf('chat') > -1) { // this is a group chat

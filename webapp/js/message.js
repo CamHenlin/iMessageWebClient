@@ -23,8 +23,6 @@ function getContactId() {
 }
 
 function loadMessages() {
-	$('#newmessagetext').unbind(enterKeyListener);
-	$('#newmessagetext').keypress(enterKeyListener);
 	var isChat = false;
 	var chatTitle = "";
 	contact = getContactId().trim();
@@ -87,10 +85,10 @@ setInterval(function() {
 		if (data.text !== latestMessageText) {
 			loadMessages();
 		} else {
-			console.log('no need to reload messages current message is ' + data.text);
+			// console.log('no need to reload messages current message is ' + data.text);
 		}
 	});
-}.bind(this), 5000)
+}, 5000)
 
 var enterKeyListener = function(event) {
 	console.log(event);
