@@ -48,3 +48,5 @@ No push notifications! You can kind of get around this by using this: [AutoForwa
 
 ## Why did you make this?
 I would like to draw attention to another project: [nodeprivatemessageskit](https://github.com/CamHenlin/nodeprivatemessageskit) Where I am trying to use private MessagesKit frameworks to send messages rather than rely on AppleScripts. I'm in a little over my head there and I would really like some pointers or assistance from people with more experience using private frameworks as I believe it could lead to more reliable and interesting uses for iMessages in the future.
+
+![made with a mac](http://henlin.org/mac.gif "made with a mac")
