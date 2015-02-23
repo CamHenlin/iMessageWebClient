@@ -126,6 +126,7 @@ if (process.argv[2] === "setkey") {
 
 
 	var userHasSentCorrectKey = false;
+
 	function isAuthenticated(req) {
 		if (req.session.userHasSentCorrectKey) {
 			return true;
@@ -253,13 +254,11 @@ if (process.argv[2] === "setkey") {
 							if (row.display_name && row.display_name !== "" && typeof(row.display_name) !== "undefined" || OLD_OSX) {
 								arr.push(row.display_name+'-'+row.chat_identifier);
 							}
-
 						} else {
 							if (row.chat_identifier && row.chat_identifier !== "" && typeof(row.chat_identifier) !== "undefined") {
 								arr.push(row.chat_identifier);
 							}
 						}
-
 					}
 				}
 
@@ -303,6 +302,18 @@ if (process.argv[2] === "setkey") {
 				}
 
 				res.send(arr.reverse());
+			});
+		});
+	});
+
+	app.get('/getMaxMessageId', function(req, res) {
+		var SQL = "SELECT MAX(message.ROWID) AS maxid FROM message";
+
+		db.serialize(function() {
+			var arr = [];
+			db.all(SQL, function(err, rows) {
+				if (err) throw err;
+				res.send({id: rows[0].maxid});
 			});
 		});
 	});
@@ -399,7 +410,6 @@ if (process.argv[2] === "setkey") {
 
 	// app.listen(process.env.PORT || 3001);
 	var server = https.createServer(options, app).listen(process.env.PORT || 443);
-
 }
 
 

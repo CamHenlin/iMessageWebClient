@@ -15,8 +15,11 @@ var template = _.template(' \
 	</div>'
 );
 
+var maxMessageId = 0;
+
 function loadChats() {
 	$.get("/getChats", function(data) {
+		$("#chatlist").empty();
 		$.each(data, function(index, chatId) {
 			var chatTextName = chatId;
 			if (chatTextName.indexOf('-chat') > -1) {
@@ -56,6 +59,7 @@ function loadChats() {
 		});
 	});
 }
+
 var newConversationEnterKeyListener = function(event) {
 	var keycode = parseInt(event.keyCode ? event.keyCode : event.which);
 	if (keycode === 13) {
@@ -96,6 +100,20 @@ function checkKey(key) {
 				$('#keyinput').val('');
 				$('#lockedcontainer').addClass('hide');
 				$('#conversationlistcontainer').removeClass('hide');
+
+
+				setInterval(function() {
+					$.get("/getMaxMessageId/", function(data) {
+						if (data.id !== maxMessageId) {
+							maxMessageId = data.id;
+							// console.log("RELOADING CHATS");
+							loadChats();
+						} else {
+							// console.log("NOT RELOADING CHATS");
+						}
+					});
+				}, 5000);
+
 			} else {
 				$('#keyinput').css('border', '2px red dotted');
 			}

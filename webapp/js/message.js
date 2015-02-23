@@ -72,8 +72,6 @@ function loadMessages() {
 		$('#conversationlistcontainer').addClass('hide');
 		$("html, body").animate({ scrollTop: $(document).height() }, "slow");
 	});
-
-
 }
 
 setInterval(function() {
@@ -91,7 +89,7 @@ setInterval(function() {
 }, 5000)
 
 var enterKeyListener = function(event) {
-	console.log(event);
+	// console.log(event);
 	var keycode = parseInt(event.keyCode ? event.keyCode : event.which);
 	if (keycode === 13) {
 		var msg = $('#newmessagetext').val();
