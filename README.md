@@ -12,7 +12,7 @@ iMessage Web Client is a web interface for iMessages, enabled by running a small
 - You tell me
 
 ## Security concerns
-Of course, access to your iMessages means that security is a concern, especially for something web-based. I decided that the best solution to address this was firstly to have the user create a "key" during the installation step that they must use to login to the web app on their devices this key can be reset by running "npm run postinstall". Secondly, the server also generates a self-signed SSL certificate when the app is first installed. Of course, the certificate will be invalid and generate warnings for most clients, but at least it will enable encryption. More advanced users can drop legitimate SSL certificates in place if desired.
+Of course, access to your iMessages means that security is a concern, especially for something web-based. I decided that the best solution to address this was firstly to have the user create a "key" during the installation step that they must use to login to the web app on their devices this key can be reset by running "npm run postinstall". Secondly, the server also generates a self-signed SSL certificate when the app is first installed. Of course, the certificate will be invalid and generate warnings for most clients, but at least it will enable encryption so others on your network will not be able to read your conversations. More advanced users can drop legitimate SSL certificates in place if desired.
 
 ## requirements:
 - server running OS X 10.7 or better
