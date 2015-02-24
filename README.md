@@ -44,7 +44,7 @@ Note if you are using this on a mobile device, it is mobile web app capable.
 Yeah I will probably improve it over the next few days.
 
 ## Shortcomings
-No push notifications! You can kind of get around this by using this: [AutoForwardIMessage](https://github.com/yongjunj/AutoForwardIMessage) to a different message app such as gchat, which you can sign into on your phone to get push notifications. In the future I would like to move this to a packaged cordova app for major app stores and provide a central push notification service for users.
+No push notifications! You can kind of get around this by using this: [AutoForwardIMessage](https://github.com/yongjunj/AutoForwardIMessage) to a different message app such as gchat, which you can sign into on your phone to get push notifications. In the future I would like to move this to a packaged cordova app for major app stores and provide a central push notification service for users. Users should let me know if they're interested in a service like this.
 
 ## Why did you make this?
 I would like to draw attention to another project: [nodeprivatemessageskit](https://github.com/CamHenlin/nodeprivatemessageskit) Where I am trying to use private MessagesKit frameworks to send messages rather than rely on AppleScripts. I'm in a little over my head there and I would really like some pointers or assistance from people with more experience using private frameworks as I believe it could lead to more reliable and interesting uses for iMessages in the future.
