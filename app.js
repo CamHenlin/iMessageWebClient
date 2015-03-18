@@ -73,10 +73,10 @@ if (process.argv[2] === "setkey") {
 		cookie: { secure: true }
 	}))
 
-	app.use(bodyparser.urlencoded({ extended: false }))
+	app.use(bodyparser.urlencoded({ extended: false }));
 
 	// parse application/json
-	app.use(bodyparser.json())
+	app.use(bodyparser.json());
 
 	app.use('/', express.static(__dirname + '/webapp'));
 
