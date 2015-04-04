@@ -12,6 +12,7 @@ var https = require("https");
 var certsPath = path.join(__dirname, 'cert');
 var caCertsPath = path.join(__dirname, 'ca');
 var session = require('express-session');
+var imessagemodule = require('iMessageModule');
 var app = express();
 var options = {};
 
@@ -374,23 +375,10 @@ if (process.argv[2] === "setkey") {
 
 		if (SELECTED_CHATTER.indexOf('chat') > -1) {
 			getChatFriendlyName(req, SELECTED_CHATTER, function(friendlyChatterName) {
-				// console.log(friendlyChatterName)
-				applescript.execFile(__dirname+'/sendmessage.AppleScript', [[friendlyChatterName], message, FULL_KEYBOARD_ACCESS], function(err, result) {
-					if (err) {
-						throw err;
-					}
-
-					sending = false;
-				}.bind(this));
+				imessagemodule.sendMessage(friendlyChatterName, message);
 			}.bind(this))
 		} else {
-			applescript.execFile(__dirname+'/sendmessage_single.AppleScript', [[SELECTED_CHATTER], message, FULL_KEYBOARD_ACCESS, ENABLE_OTHER_SERVICES], function(err, result) {
-				if (err) {
-					throw err;
-				}
-
-				sending = false;
-			}.bind(this));
+			imessagemodule.sendMessage(SELECTED_CHATTER, message);
 		}
 	});
 
