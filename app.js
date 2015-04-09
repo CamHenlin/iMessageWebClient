@@ -12,7 +12,7 @@ var https = require("https");
 var certsPath = path.join(__dirname, 'cert');
 var caCertsPath = path.join(__dirname, 'ca');
 var session = require('express-session');
-var imessagemodule = require('iMessageModule');
+var imessagemodule = require('imessagemodule');
 var app = express();
 var options = {};
 
