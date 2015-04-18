@@ -18,10 +18,10 @@ var options = {};
 
 if (process.argv[2] === "setkey") {
 	function buildCerts(callback) {
-		// console.log("checking for certs...");
+		console.log("checking for certs...");
 		fs.exists('cert/my-server.key.pem', function (exists) {
 			if (!exists) {
-				// console.log("rebuilding certs...");
+				console.log("rebuilding certs...");
 				exec('./buildcerts.sh', function (error, stdout, stderr) {
 					// console.log(error);
 					// console.log(stdout);
@@ -30,7 +30,7 @@ if (process.argv[2] === "setkey") {
 				});
 				return;
 			} else {
-				// console.log("certs ok...");
+				console.log("certs ok...");
 			}
 
 			callback();
@@ -57,7 +57,7 @@ if (process.argv[2] === "setkey") {
 } else {
 	var key = fs.readFileSync('SERVER_KEY', 'utf8').replace('\n', '');
 	if (key === "") {
-		// console.log("WARNING: NO KEY HAS BEEN SET, PLEASE FIX BY EXITING WITH CTRL+C AND RUNNING `npm setkey`");
+		console.log("WARNING: NO KEY HAS BEEN SET, PLEASE FIX BY EXITING WITH CTRL+C AND RUNNING `npm setkey`");
 	}
 
 	options = {
