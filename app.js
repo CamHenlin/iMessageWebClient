@@ -366,13 +366,6 @@ if (process.argv[2] === "setkey") {
 		SELECTED_CHATTER = req.body.to;
 		message = req.body.message;
 
-		if (sending) { res.end(500); }
-		else {
-			// console.log('looks good!');
-			res.send(true);
-		}
-		sending = true;
-
 		if (SELECTED_CHATTER.indexOf('chat') > -1) {
 			getChatFriendlyName(req, SELECTED_CHATTER, function(friendlyChatterName) {
 				imessagemodule.sendMessage(friendlyChatterName, message);
@@ -380,6 +373,8 @@ if (process.argv[2] === "setkey") {
 		} else {
 			imessagemodule.sendMessage(SELECTED_CHATTER, message);
 		}
+
+		res.send("true");
 	});
 
 	app.post('/checkKey', function(req, res) {
