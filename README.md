@@ -28,8 +28,6 @@ cd imessagewebclient
 npm install
 
 sudo npm start
-
-node app
 ```
 `note: if you prefer to start the app without sudo, start it instead with the command: PORT=YOUR_PORT npm start, and adjust your web browser accordingly`
 
