@@ -1,5 +1,9 @@
 # iMessage Web Client
 
+## note: no longer works in OS X 10.11 for sending iMessages.
+### Apple took away Messages.app UI scripting capabilities in OS X 10.11 to prevent this type of software. You can report this as a bug to Apple at: https://developer.apple.com/bug-reporting/ Alternatively, you can contribute to https://github.com/CamHenlin/iMessageModule and help figure out a way around scripting Messages.app.
+
+
 ![iMessage web client screenshot](https://github.com/CamHenlin/imessagewebclient/raw/master/screenshot.png "screenshot of the iMessage web client in action")
 
 ## What is this?
